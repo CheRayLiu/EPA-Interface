@@ -1,0 +1,19 @@
+Meeting Notes:
+
+- Stages of the project
+	Stage 1:
+	Able to run testfiles in the interface
+	Stage 2:
+	Able to run software with different input files
+	Stage 3:
+	Able to edit input file with text editor
+	Stage 4:
+	Able to edit input file within the interface
+
+-Using Github for project 
+
+-Use AWS's Microsoft Windows Server 2016 Base with Containers 
+
+-Find a good issue tracking tool
+
+-Complete stage 1 by Tuesday 05/17
