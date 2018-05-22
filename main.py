@@ -1,21 +1,63 @@
 import tkinter as tk
 from tkinter import ttk
+import subprocess
 
 LARGE_FONT = ("Verdana", 12)
 NORM_FONT = ("Verdana", 10)
 SMALL_FONT = ("Verdana", 8)
 
 
-def popupmsg(msg):
+def popupmsg(msg, result):
     popup = tk.Tk()
     def leavemini():
         popup.destroy()
     popup.wm_title("!")
-    label = ttk.Label(popup, text = msg, font = NORM_FONT)
-    label.pack(side = "top", fill = "x", pady = 10)
-    B1 = ttk.Button(popup, text = "Okay", command = leavemini)
-    B1.pack()
+    if result !="":
+        s = tk.Scrollbar(popup)
+        T = tk.Text(popup)
+
+        T.focus_set()
+        s.pack(side=tk.RIGHT, fill=tk.Y)
+        T.pack(side=tk.LEFT, fill=tk.Y)
+        s.config(command=T.yview)
+        T.config(yscrollcommand=s.set)
+        T.insert(tk.END, result)
+        B1 = ttk.Button(popup, text="Okay", command=leavemini)
+        B1.pack()
+    else:
+        label = ttk.Label(popup, text = msg, font = NORM_FONT)
+        label.pack(side = "top", fill = "x", pady = 10)
+        B1 = ttk.Button(popup, text = "Okay", command = leavemini)
+        B1.pack()
     popup.mainloop()
+
+def runAERMAP():
+    process =subprocess.Popen('RunAERMAP', cwd=r'D:\\EPA\\AERMAP\\aermap_testcase\\NW_Durham', shell= True,stdout=subprocess.PIPE)
+
+    popupmsg("",process.communicate()[0].decode())
+
+
+
+def runAERMOD():
+    process =subprocess.Popen('runtests_AERMOD', cwd=r'D:\EPA\AERMOD\aermod_test_cases_18081\aermet_def_16216_aermod_16216r', shell= True,stdout=subprocess.PIPE)
+
+    popupmsg("",process.communicate()[0].decode())
+
+
+
+
+def runAERMET():
+    process =subprocess.Popen('run_aermet_test_suite', cwd=r'D:\EPA\AERMET\aermet_test_cases_18081\aermet_def_testcases_18081', shell= True,stdout=subprocess.PIPE)
+
+    popupmsg("",process.communicate()[0].decode())
+
+
+
+def runAERScreen():
+    process =subprocess.Popen('run_aerscreen', cwd=r'D:\EPA\AERScreen\aerscreen_test_cases\point', shell= True,stdout=subprocess.PIPE)
+
+    popupmsg("",process.communicate()[0].decode())
+
 
 class EPAgui(tk.Tk):
 
@@ -32,23 +74,23 @@ class EPAgui(tk.Tk):
         menubar = tk.Menu(container)
 
         filemenu = tk.Menu(menubar, tearoff = 0)
-        filemenu.add_command(label="New Session", command = lambda: popupmsg("Not supported yet!"))
-        filemenu.add_command(label="Load File", command=lambda: popupmsg("Not supported yet!"))
+        filemenu.add_command(label="New Session", command = lambda: popupmsg("Not supported yet!",""))
+        filemenu.add_command(label="Load File", command=lambda: popupmsg("Not supported yet!",""))
         filemenu.add_separator()
         filemenu.add_command(label = "Exit", command = quit)
         menubar.add_cascade(label="File", menu=filemenu)
 
         editmenu = tk.Menu(menubar, tearoff=0)
-        editmenu.add_command(label="Undo", command=lambda: popupmsg("Not supported yet!"))
-        editmenu.add_command(label="Redo", command=lambda: popupmsg("Not supported yet!"))
+        editmenu.add_command(label="Undo", command=lambda: popupmsg("Not supported yet!",""))
+        editmenu.add_command(label="Redo", command=lambda: popupmsg("Not supported yet!",""))
         tk.Tk.config(self, menu= menubar)
         menubar.add_cascade(label="Edit", menu=editmenu)
 
         runmenu = tk.Menu(menubar, tearoff=0)
-        runmenu.add_command(label="Run AERMAP", command=lambda: popupmsg("Not supported yet!"))
-        runmenu.add_command(label="Run AERMOD", command=lambda: popupmsg("Not supported yet!"))
-        runmenu.add_command(label="Run AERMET", command=lambda: popupmsg("Not supported yet!"))
-        runmenu.add_command(label="Run AERSCREEN", command=lambda: popupmsg("Not supported yet!"))
+        runmenu.add_command(label="Run AERMAP", command=lambda: runAERMAP())
+        runmenu.add_command(label="Run AERMOD", command=lambda: runAERMOD())
+        runmenu.add_command(label="Run AERMET", command=lambda: runAERMET())
+        runmenu.add_command(label="Run AERSCREEN", command=lambda: runAERScreen())
         tk.Tk.config(self, menu=menubar)
         menubar.add_cascade(label="Run", menu=runmenu)
 
@@ -107,3 +149,4 @@ class PageTwo(tk.Frame):
 app = EPAgui()
 app.geometry("1280x720")
 app.mainloop()
+
