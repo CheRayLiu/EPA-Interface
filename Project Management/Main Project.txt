@@ -1,0 +1,17 @@
+Objectives: 
+
+1. EPA AERMOD Migration 
+2. Puff system platform 
+3. Feasibility studies in application terrain and meteorlogy data of Taiwan.
+
+Milestones:
+
+Stage 1: EPA Migration
+End date: ~ Oct 31st, 2018
+
+
+Stage 2: Puff system platform
+End date: ~ March 31st, 2019
+
+Stage 3: Feasibility studies in application terrain and meteorlogy data of Taiwan
+End date: ~ May 31st, 2019
