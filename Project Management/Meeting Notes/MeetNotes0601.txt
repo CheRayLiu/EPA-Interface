@@ -1,0 +1,19 @@
+Meeting notes (June 1st, 2018):
+
+-Demo'ed multithreading for run examples files (A1)
+
+
+
+A9: 
+-Display progress for the running of testfiles to update users
+
+A10:
+-Verify that AERMOD can be run with test data from the same location
+
+A11:
+Split programs into different modules based on MVC
+
+Next week:
+
+1. A4, A3
+2. A2
