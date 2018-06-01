@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 import subprocess
+import threading
 
 LARGE_FONT = ("Verdana", 12)
 NORM_FONT = ("Verdana", 10)
@@ -87,10 +88,10 @@ class EPAgui(tk.Tk):
         menubar.add_cascade(label="Edit", menu=editmenu)
 
         runmenu = tk.Menu(menubar, tearoff=0)
-        runmenu.add_command(label="Run AERMAP", command=lambda: runAERMAP())
-        runmenu.add_command(label="Run AERMOD", command=lambda: runAERMOD())
-        runmenu.add_command(label="Run AERMET", command=lambda: runAERMET())
-        runmenu.add_command(label="Run AERSCREEN", command=lambda: runAERScreen())
+        runmenu.add_command(label="Run AERMAP", command=lambda: threading.Thread(target=runAERMAP).start())
+        runmenu.add_command(label="Run AERMOD", command=lambda: threading.Thread(target=runAERMOD).start())
+        runmenu.add_command(label="Run AERMET", command=lambda: threading.Thread(target=runAERMET).start())
+        runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=runAERScreen).start())
         tk.Tk.config(self, menu=menubar)
         menubar.add_cascade(label="Run", menu=runmenu)
 
@@ -145,6 +146,24 @@ class PageTwo(tk.Frame):
 
         button1 = ttk.Button(self, text="Back to Home", command=lambda: controller.show_frame(StartPage))
         button1.pack()
+
+
+
+# class Gui:
+#
+#     def refresh(self):
+#         self.root.update()
+#         self.root.after(1000,self.refresh)
+#
+#     def start(self):
+#         self.refresh()
+#         threading.Thread(target=doingALotOfStuff).start()
+#
+# #outside
+# GUI = Gui(Tk())
+# GUI.mainloop()
+
+
 
 app = EPAgui()
 app.geometry("1280x720")
