@@ -11,7 +11,7 @@ A2. Configuration file/directory includes saved inputs location, saved output fi
 -Implementation 
 
 A3. Interface is able to select and enter all the parameters shown in the .exe
--Verify if there is an API and API that is feasible to match functions as interactive program
+-Verify if there is an API and API that is feasible to match functions as interactive program (No API found for now)
 -Make decision if we will solve the problem by API or data feeding into interactive program 
 
 A4. Design file menu bar

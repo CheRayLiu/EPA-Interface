@@ -79,7 +79,8 @@ class EPAgui(tk.Tk):
         filemenu.add_command(label="Load File", command=lambda: popupmsg("Not supported yet!",""))
         filemenu.add_separator()
         filemenu.add_command(label = "Exit", command = quit)
-        menubar.add_cascade(label="File", menu=filemenu)
+        menubar.add_cascade(label="檔案 (File)"
+                                  "", menu=filemenu)
 
         editmenu = tk.Menu(menubar, tearoff=0)
         editmenu.add_command(label="Undo", command=lambda: popupmsg("Not supported yet!",""))
@@ -93,7 +94,7 @@ class EPAgui(tk.Tk):
         runmenu.add_command(label="Run AERMET", command=lambda: threading.Thread(target=runAERMET).start())
         runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=runAERScreen).start())
         tk.Tk.config(self, menu=menubar)
-        menubar.add_cascade(label="Run", menu=runmenu)
+        menubar.add_cascade(label="執行 (Run)", menu=runmenu)
 
 
         self.frames = {}

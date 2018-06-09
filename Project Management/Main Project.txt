@@ -15,3 +15,42 @@ End date: ~ March 31st, 2019
 
 Stage 3: Feasibility studies in application terrain and meteorlogy data of Taiwan
 End date: ~ May 31st, 2019
+
+A1. Add loading screen when running program (Closed)
+-Added multithreading to program to prevent the wait time of the program
+
+A2. Configuration file/directory includes saved inputs location, saved output files 
+-Understand what needs to be saved in each AER.. exe. files
+-Figure out how to save the inputs and outputs of the AER.. exe files
+-Technical verification for the problems
+-Implementation 
+
+A3. Interface is able to select and enter all the parameters shown in the .exe
+-Verify if there is an API and API that is feasible to match functions as interactive program
+-Make decision if we will solve the problem by API or data feeding into interactive program 
+
+A4. Design file menu bar
+-Specify each steps of the process of running procedure of the AER files
+-Design required menu items that fulfills functions for each steps during the process
+
+
+A5. Add logo in starting screen (ARTISC using Taiwan Intellignet Service Company logo)
+-Retrieve company logo from ARTISC website or possibly ask an employee within company for a better quality of logo
+
+A6. Version 1.8.1
+
+A7. Change to Chinese Version and chinese name ()
+
+A8. Create .kmz file from result of AERplot and display it on Google earth
+-Run an example AERPlot file to create .kmz output file 
+-Feed .kmz file into google earth for display
+-Install google earth (Done)
+
+A9: 
+-Display progress for the running of testfiles to update users
+
+A10:
+-Verify that AERMOD can be run with test data from the same location
+
+A11:
+Split programs into different modules based on MVC
