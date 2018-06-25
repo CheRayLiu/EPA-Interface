@@ -1,0 +1,9 @@
+Meeting Notes:
+
+-Discussed about how the interface would be used with MainPageAir
+
+Next week:
+A12 Updated Specification for checkup
+A10 Find testfiles for the same location to run AERSCREEN 
+A3 Interface is able to select and enter all the parameters shown in the .exe
+
