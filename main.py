@@ -3,6 +3,7 @@ from tkinter import ttk
 import subprocess
 import threading
 
+
 LARGE_FONT = ("Verdana", 12)
 NORM_FONT = ("Verdana", 10)
 SMALL_FONT = ("Verdana", 8)
@@ -32,6 +33,33 @@ def popupmsg(msg, result):
         B1.pack()
     popup.mainloop()
 
+
+def popinput():
+    popin = tk.Tk()
+    popin.title("Input")
+    tk.Label(popin, text="Input Location").grid(row=0)
+
+    e1 = tk.Entry(popin)
+
+
+    e1.grid(row=0, column=1)
+
+    ttk.Button(popin, text='Confirm input file and Run AERSCREEN', command= lambda: threading.Thread(target=create_aerin(e1.get())).start()).grid(row=8, sticky=tk.W, pady=4)
+    ttk.Button(popin, text='Quit', command= lambda: threading.Thread(target=popin.destroy).start()).grid(row=9, sticky=tk.W, pady=4)
+
+    popin.mainloop()
+
+def create_aerin(loc):
+    process = subprocess.call('copy /Y ' +loc+' aerscreen.inp', cwd=r'D:\\AERSCREEN', shell=True,
+                     stdout=subprocess.PIPE)
+    run_aerscreen()
+
+def run_aerscreen():
+    process = subprocess.call('execute', cwd=r'D:\\AERSCREEN', shell=True,
+                              stdout=subprocess.PIPE)
+    popupmsg("", process.communicate()[0].decode())
+
+
 def runAERMAP():
     process =subprocess.Popen('RunAERMAP', cwd=r'D:\\EPA\\AERMAP\\aermap_testcase\\NW_Durham', shell= True,stdout=subprocess.PIPE)
 
@@ -54,10 +82,9 @@ def runAERMET():
 
 
 
-def runAERScreen():
-    process =subprocess.Popen('run_aerscreen', cwd=r'D:\EPA\AERScreen\aerscreen_test_cases\point', shell= True,stdout=subprocess.PIPE)
 
-    popupmsg("",process.communicate()[0].decode())
+
+
 
 
 class EPAgui(tk.Tk):
@@ -89,10 +116,11 @@ class EPAgui(tk.Tk):
         menubar.add_cascade(label="Edit", menu=editmenu)
 
         runmenu = tk.Menu(menubar, tearoff=0)
-        runmenu.add_command(label="Run AERMAP", command=lambda: threading.Thread(target=runAERMAP).start())
-        runmenu.add_command(label="Run AERMOD", command=lambda: threading.Thread(target=runAERMOD).start())
-        runmenu.add_command(label="Run AERMET", command=lambda: threading.Thread(target=runAERMET).start())
-        runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=runAERScreen).start())
+        runmenu.add_command(label="Run AERMAP testcase", command=lambda: threading.Thread(target=runAERMAP).start())
+        runmenu.add_command(label="Run AERMOD testcase", command=lambda: threading.Thread(target=runAERMOD).start())
+        runmenu.add_command(label="Run AERMET testcase", command=lambda: threading.Thread(target=runAERMET).start())
+        #runmenu.add_command(label="Run AERSCREEN testcase", command=lambda: threading.Thread(target=runAERScreen).start())
+        runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=popinput).start())
         tk.Tk.config(self, menu=menubar)
         menubar.add_cascade(label="執行 (Run)", menu=runmenu)
 

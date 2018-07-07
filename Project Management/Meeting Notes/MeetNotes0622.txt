@@ -8,6 +8,11 @@ https://www.youtube.com/watch?v=0dLAwGHzZ7o  (Watch for where do download sample
 
 -Demonstrated AERPLOT and its use
 
+
 Next meeting:
 
--Fully run sample from input file into AERSCREEN AND AERPLOT to Google Earth
+-A10, A8 Fully run sample from input file into AERSCREEN AND AERPLOT to Google Earth
+-A2
+
+if have time:
+-
