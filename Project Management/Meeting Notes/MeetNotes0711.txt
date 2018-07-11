@@ -1,0 +1,16 @@
+Meeting Notes:
+Interface design for now:
+-Input: Recepters for a specific domain
+	-Treeview of domains and under each domain to specify receptor
+	-Checkbox yes/no to involve the receptor
+	-Open editor to edit the receptor using cmd or win + R to open editor
+	-Display confirmation of input before execution of simulation
+	-Save execution cmd messages to a file 
+	-Option to display output stats of receptors (yes/no)
+	-Option to display result map (yes/no).
+	-Option to display filtered receptors results (eg. receptors with numbers above a certain condition)
+	-Able to alert filtered result before finishing the execution of entire program (If feasible)
+
+By July 13th:
+	A10: Able to open editor and edit receptor. Runnning the whole process by a single execution
+
