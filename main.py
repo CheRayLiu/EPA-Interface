@@ -2,36 +2,12 @@ import tkinter as tk
 from tkinter import ttk
 import subprocess
 import threading
+from receptorInput import *
+from receptorInput import popupmsg as popupmsg
 
 
-LARGE_FONT = ("Verdana", 12)
-NORM_FONT = ("Verdana", 10)
-SMALL_FONT = ("Verdana", 8)
 
 
-def popupmsg(msg, result):
-    popup = tk.Tk()
-    def leavemini():
-        popup.destroy()
-    popup.wm_title("!")
-    if result !="":
-        s = tk.Scrollbar(popup)
-        T = tk.Text(popup)
-
-        T.focus_set()
-        s.pack(side=tk.RIGHT, fill=tk.Y)
-        T.pack(side=tk.LEFT, fill=tk.Y)
-        s.config(command=T.yview)
-        T.config(yscrollcommand=s.set)
-        T.insert(tk.END, result)
-        B1 = ttk.Button(popup, text="Okay", command=leavemini)
-        B1.pack()
-    else:
-        label = ttk.Label(popup, text = msg, font = NORM_FONT)
-        label.pack(side = "top", fill = "x", pady = 10)
-        B1 = ttk.Button(popup, text = "Okay", command = leavemini)
-        B1.pack()
-    popup.mainloop()
 
 
 def popinput():
@@ -119,6 +95,7 @@ class EPAgui(tk.Tk):
         runmenu.add_command(label="Run AERMAP testcase", command=lambda: threading.Thread(target=runAERMAP).start())
         runmenu.add_command(label="Run AERMOD testcase", command=lambda: threading.Thread(target=runAERMOD).start())
         runmenu.add_command(label="Run AERMET testcase", command=lambda: threading.Thread(target=runAERMET).start())
+        runmenu.add_command(label="Run AERMOD with input", command=lambda: threading.Thread(target=receptorInput).start())
         #runmenu.add_command(label="Run AERSCREEN testcase", command=lambda: threading.Thread(target=runAERScreen).start())
         runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=popinput).start())
         tk.Tk.config(self, menu=menubar)
