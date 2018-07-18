@@ -75,4 +75,4 @@ def receptorInput():
         else:
             popupmsg("Please enter Y/N","")
 
-receptorInput()
+
