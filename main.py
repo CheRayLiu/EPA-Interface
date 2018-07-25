@@ -4,6 +4,7 @@ import subprocess
 import threading
 from receptorInput import *
 from receptorInput import popupmsg as popupmsg
+from sourceEditor  import *
 
 
 
@@ -95,6 +96,8 @@ class EPAgui(tk.Tk):
         runmenu.add_command(label="Run AERMAP testcase", command=lambda: threading.Thread(target=runAERMAP).start())
         runmenu.add_command(label="Run AERMOD testcase", command=lambda: threading.Thread(target=runAERMOD).start())
         runmenu.add_command(label="Run AERMET testcase", command=lambda: threading.Thread(target=runAERMET).start())
+        runmenu.add_command(label="Edit AERMOD Source", command=lambda: threading.Thread(target=sourceBox).start())
+        runmenu.add_command(label="Edit AERMOD Receptor", command=lambda: threading.Thread(target=numRec).start())
         runmenu.add_command(label="Run AERMOD with input", command=lambda: threading.Thread(target=receptorInput).start())
         #runmenu.add_command(label="Run AERSCREEN testcase", command=lambda: threading.Thread(target=runAERScreen).start())
         runmenu.add_command(label="Run AERSCREEN", command=lambda: threading.Thread(target=popinput).start())

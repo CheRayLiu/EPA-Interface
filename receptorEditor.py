@@ -3,6 +3,8 @@ from tkinter import ttk
 import threading
 import fileinput
 import subprocess
+from receptorInput import *
+
 
 
 aermodlocper = "D:\\EPA\\"
@@ -23,7 +25,7 @@ def numRec():
     e1.grid(row=0, column=1)
 
     ttk.Button(popin, text='Enter',
-               command=lambda: threading.Thread(target=recInput(int(e1.get()))).start()).grid(row=8, sticky=tk.W, pady=4)
+               command=lambda: threading.Thread(target=recInput(popin,int(e1.get()))).start()).grid(row=8, sticky=tk.W, pady=4)
     ttk.Button(popin, text='Quit', command=lambda: threading.Thread(target=popin.destroy).start()).grid(row=9,
                                                                                                         sticky=tk.W,
                                                                                                         pady=4)
@@ -32,8 +34,8 @@ def numRec():
 
 
 
-def recInput(rec):
-
+def recInput(popin,rec):
+    popin.destroy()
     recEdit = tk.Tk()
     recEdit.title("!")
     tk.Label(recEdit, text="ORIG: ").grid(row=1)
@@ -56,7 +58,7 @@ def recInput(rec):
         gdir[i].grid(row=3, column = i + 1)
 
     ttk.Button(recEdit, text='Enter',
-               command=lambda: threading.Thread(target=combine(orig, dist, gdir)).start()).grid(row=8, sticky=tk.W,
+               command=lambda: threading.Thread(target=combine(recEdit,orig, dist, gdir)).start()).grid(row=8, sticky=tk.W,
                                                                                               pady=4)
 
     ttk.Button(recEdit, text='Quit', command=lambda: threading.Thread(target=recEdit.destroy).start()).grid(row=9,
@@ -81,7 +83,8 @@ def searchRepLine(keyword,sub,filename):
 
 
 
-def combine(orig, dist, gdir):
+def combine(recEdit,orig, dist, gdir):
+
     origstr = origfile + " " + str(orig.get()) + "\n"
 
     diststr = distfile
@@ -95,7 +98,7 @@ def combine(orig, dist, gdir):
     for i in range(len(gdir)):
         gdirstr += " " + str(gdir[i].get()) + " "
     gdirstr += "\n"
-
+    recEdit.destroy()
     aermodIn = aermodlocper + aermodloc + "\\aermod.inp"
     searchRepLine("ORIG", origstr, aermodIn)
     searchRepLine("DIST", diststr, aermodIn)
@@ -104,7 +107,8 @@ def combine(orig, dist, gdir):
 
 
 
-numRec()
+
+#numRec()
 
 
 
