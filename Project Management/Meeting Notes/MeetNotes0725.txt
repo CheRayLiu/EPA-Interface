@@ -1,0 +1,21 @@
+﻿Meeting notes:
+
+-Demo'ed source editing for AERMOD
+
+
+
+For next time ():
+	-For soucre editor, open input file to show difference in before/after in input file
+	-Add Logo screen (Include company name)
+	-Increase font size 
+	-Change logo 
+	-Change screen size to (600x800, 1024x768)
+	-Include company name in title (Project notes)
+	-Add 檔案 as first menu bar (Load previous records)
+	-Add 汙染環境 (Environment by input) as 2nd menu bar (1. Source (汙染源), 2. Receptor (接受體)??? 3. Terrain 地理/地形 4. Meteorology 氣候 5. Buildings 建築物???)
+	-Add 汙染監控 (Environment by sensors) as 3rd menu bar (1. Source (汙染源), 2. Receptor (接受體)??? 3. Terrain 地理/地形 4. Meteorology 氣候 5. Buildings 建築物???)
+	-Add 汙染模擬  (Simulation) as 4th menu bar (1. Minutes (?), 2. Hourly (?) 3. Daily (?) 4. Weekly (??) 5. Monthly (?) 6. Annually (?))
+	-Add 模擬結果???? (Display result) as 5th menu bar (process file, outputfile, debug file, plotfile, etc)
+	-Add 模擬歷史???? (Simulation Record) as 6th menu bar 
+	-Add 偏好設定 (User Preference)  as 7th menu bar 
+	-Add 關於 as 8th menu bar  (Help, copyright, about, User agreement, testcases)
