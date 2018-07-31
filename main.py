@@ -7,6 +7,7 @@ from receptorInput import popupmsg as popupmsg
 from sourceEditor  import *
 import time
 from PIL import ImageTk, Image
+from aermodRUN import *
 
 
 
@@ -125,21 +126,23 @@ class EPAgui(tk.Tk):
         menubar.add_cascade(label="汙染監控(Environment sensors)", menu=sensormenu)
 
         simuMenu = tk.Menu(menubar, tearoff=0)
+        simuMenu.add_command(label="自動模擬",
+                             command=lambda: threading.Thread(target=run).start())
         simuMenu.add_command(label="分鐘", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         simuMenu.add_command(label="小時", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         simuMenu.add_command(label="天日", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
-        simuMenu.add_command(label="禮拜", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
+        simuMenu.add_command(label="星期", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         simuMenu.add_command(label="月", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         simuMenu.add_command(label="年", command=lambda:threading.Thread(target=popupmsg("Not supported yet!", "")).start())
-        simuMenu.add_command(label="Run AERMOD with input", command= lambda: threading.Thread(target=receptorInput).start())
+        simuMenu.add_command(label="依輸入資料", command= lambda: threading.Thread(target=receptorInput).start())
 
         menubar.add_cascade(label="汙染模擬(Simulation)", menu=simuMenu)
 
         resultMenu = tk.Menu(menubar, tearoff=0)
         resultMenu.add_command(label="過程檔案", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
-        resultMenu.add_command(label="解果檔案", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
-        resultMenu.add_command(label="Debug file", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
-        resultMenu.add_command(label="Plotfile", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
+        resultMenu.add_command(label="結果檔案", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
+        resultMenu.add_command(label="除錯檔案", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
+        resultMenu.add_command(label="圖形結果", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
 
         menubar.add_cascade(label="模擬結果(Result)", menu=resultMenu)
 
@@ -147,7 +150,7 @@ class EPAgui(tk.Tk):
         recordMenu.add_command(label="Temp", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         recordMenu.add_command(label="Temp", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
 
-        menubar.add_cascade(label="模擬歷史(Record)", menu=recordMenu)
+        menubar.add_cascade(label="模擬紀錄(Record)", menu=recordMenu)
 
         prefMenu = tk.Menu(menubar, tearoff=0)
         prefMenu.add_command(label="Temp", command=lambda:threading.Thread(target=popupmsg("Not supported yet!", "")).start())
@@ -178,7 +181,7 @@ class EPAgui(tk.Tk):
         self.withdraw()
         splash = Splash(self)
 
-        time.sleep(3.5)
+        time.sleep(10)
 
         ## finished loading so destroy splash
         splash.destroy()

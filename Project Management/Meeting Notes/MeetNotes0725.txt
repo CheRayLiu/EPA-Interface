@@ -16,6 +16,11 @@ For next time ():
 	-Add 汙染監控 (Environment by sensors) as 3rd menu bar (1. Source (汙染源), 2. Receptor (接受體)??? 3. Terrain 地理/地形 4. Meteorology 氣候 5. Buildings 建築物???)
 	-Add 汙染模擬  (Simulation) as 4th menu bar (1. Minutes (?), 2. Hourly (?) 3. Daily (?) 4. Weekly (??) 5. Monthly (?) 6. Annually (?))
 	-Add 模擬結果???? (Display result) as 5th menu bar (process file, outputfile, debug file, plotfile, etc)
-	-Add 模擬歷史???? (Simulation Record) as 6th menu bar 
+	-Add 模擬紀錄???? (Simulation Record) as 6th menu bar 
 	-Add 偏好設定 (User Preference)  as 7th menu bar 
 	-Add 關於 as 8th menu bar  (Help, copyright, about, User agreement, testcases)
+	**
+	-Add function from start to end AERMOD
+	-Able to capture error during simulation and display
+	-Able to load/save file
+	-Able to regulate screen location
