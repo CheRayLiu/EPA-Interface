@@ -8,6 +8,7 @@ from sourceEditor  import *
 import time
 from PIL import ImageTk, Image
 from aermodRUN import *
+from requirements import *
 
 
 
@@ -168,7 +169,37 @@ class EPAgui(tk.Tk):
         tk.Tk.config(self, menu=menubar)
         menubar.add_cascade(label="關於 About", menu=aboutMenu)
 
+        reqMenu = tk.Menu(menubar, tearoff=0)
 
+        aermapMenu = tk.Menu(reqMenu, tearoff =0)
+        reqMenu.add_cascade(label = 'AERMAP Examples',underline=0,
+                               menu= aermapMenu)
+
+
+
+        aermapMenu.add_command(label="AERMAP Example 1", command=lambda: threading.Thread(target=mapMult).start())
+        aermapMenu.add_command(label="AERMAP Example 2",
+                              command=lambda: threading.Thread(target=map2).start())
+        aermapMenu.add_command(label="AERMAP Output File",
+                            command=lambda: threading.Thread(target=map2).start())
+        reqMenu.add_command(label="AERMET",
+                              command=lambda: threading.Thread(target=met1).start())
+
+        aermodMenu = tk.Menu(reqMenu, tearoff=0)
+        reqMenu.add_cascade(label='AERMOD Examples', underline=0,
+                            menu=aermapMenu)
+        aermodMenu.add_command(label="AERMOD Example 1",
+                            command=lambda: threading.Thread(target=mod1).start())
+        aermodMenu.add_command(label="AERMOD Example 2",
+                            command=lambda: threading.Thread(target=mod2).start())
+        aermodMenu.add_command(label="AERMOD Example 3",
+                            command=lambda: threading.Thread(target=mod7).start())
+        aermodMenu.add_command(label="AERMOD Example 4",
+                            command=lambda: threading.Thread(target=mod8).start())
+        reqMenu.add_command(label="AERSCREEN",
+                            command=lambda: threading.Thread(target=screen1).start())
+        tk.Tk.config(self, menu=menubar)
+        menubar.add_cascade(label="Function Verify", menu=reqMenu)
 
 
 
@@ -181,7 +212,7 @@ class EPAgui(tk.Tk):
         self.withdraw()
         splash = Splash(self)
 
-        time.sleep(10)
+        time.sleep(3)
 
         ## finished loading so destroy splash
         splash.destroy()
@@ -252,6 +283,6 @@ class EPAgui(tk.Tk):
 
 
 app = EPAgui()
-app.geometry("1024x768")
+app.geometry("1200x768")
 app.mainloop()
 

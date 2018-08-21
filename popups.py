@@ -44,7 +44,7 @@ def confirmpop(confirm):
 
 
     popup.wm_title("")
-    label = ttk.Label(popup, text = "Confirm Input file?", font = NORM_FONT)
+    label = ttk.Label(popup, text = "Confirm Input file and Run?", font = NORM_FONT)
     label.pack(side = "top", fill = "x", pady = 10)
 
     B1 = ttk.Button(popup, text = "Yes", command = confirmy)

@@ -1,0 +1,27 @@
+Change "Requirement" -> "Function Verify"
+AERMAP -> Example 1,2 -> Popup explains which requirement it verifies -> Click "Verify"
+
+
+
+AERMAP:
+Make interface able to 
+1.1 Option to show that AERPLOT is running 
+1.1 Try putting source from NAD_Gap to NW_Durham example ** (Done)
+1.1 Add elevation to source and receptor ** 
+1.2 Explain how multiple domain works and prove it
+1.6 Figure out dem file format ** 
+1.7 Explain with screen for user input 
+1.8 Change 2nd data file NAD_Gap to another format
+1.9 Add additional menu item for output file ** (Done)
+2*
+Add loading screen that displays the process of each stage of AERMET
+
+3.1 Make interface for AERMOD (input parameters: AERMET file, AERMAP file, Source, receptor, elevation)
+3.4 Make option to specify time/date/year for user to download meteorology informaton
+3.5 Able to select one or multiple source types in test example
+3.6 Find multiple source contribution 
+3.7 Run CO example when have time (Done)
+
+4* Make an input interface for AERSCREEN 
+
+For all: Make additional copy of word file that highlights and label the line number of each requirement item **

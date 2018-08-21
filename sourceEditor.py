@@ -3,7 +3,7 @@ from tkinter import ttk
 import threading
 import fileinput
 import subprocess
-from receptorEditor import *
+
 
 
 aermodlocper = "D:\\EPA\\"
