@@ -73,10 +73,10 @@ class Splash(tk.Toplevel):
         self.title("ARTISC Version 1.8.1")
 
         self.geometry("400x358")
-        path  = "C:\\Users\\Ray\\Desktop\\EPA-Interface\\EPA-Interface\\Pictures\\companylogy.jpg"
-        img = ImageTk.PhotoImage(Image.open(path))
+        
+        img = ImageTk.PhotoImage(file = "companylogy.jpg")
 
-        imgicon = ImageTk.PhotoImage(file=os.path.join('C:\\Users\\Ray\\Desktop\\EPA-Interface\\EPA-Interface\\', 'company.ico'))
+        imgicon = ImageTk.PhotoImage(file='company.ico')
         self.tk.call('wm', 'iconphoto', self._w, imgicon)
         panel = tk.Label(self, image=img)
         panel.pack(side="bottom", fill="both", expand="yes")
@@ -90,7 +90,7 @@ class EPAgui(tk.Tk):
 
 
         tk.Tk.wm_title(self, "ARTISC Version 1.8.1")
-        imgicon = ImageTk.PhotoImage(file=os.path.join('C:\\Users\\Ray\\Desktop\\EPA-Interface\\EPA-Interface\\', 'company.ico'))
+        imgicon = ImageTk.PhotoImage(file='company.ico')
 
         self.tk.call('wm', 'iconphoto', self._w, imgicon)
         container = tk.Frame(self)
@@ -104,7 +104,7 @@ class EPAgui(tk.Tk):
         filemenu.add_command(label="New Session", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         filemenu.add_command(label="Load File", command=lambda: threading.Thread(target=popupmsg("Not supported yet!", "")).start())
         filemenu.add_separator()
-        filemenu.add_command(label="Exit", command=quit)
+        
         menubar.add_cascade(label="檔案 (File)"
                                   "", menu=filemenu)
 
