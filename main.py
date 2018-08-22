@@ -181,7 +181,7 @@ class EPAgui(tk.Tk):
         aermapMenu.add_command(label="AERMAP Example 2",
                               command=lambda: threading.Thread(target=map2).start())
         aermapMenu.add_command(label="AERMAP Output File",
-                            command=lambda: threading.Thread(target=map2).start())
+                            command=lambda: threading.Thread(target=map3).start())
         reqMenu.add_command(label="AERMET",
                               command=lambda: threading.Thread(target=met1).start())
 

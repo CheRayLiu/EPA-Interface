@@ -52,3 +52,28 @@ def confirmpop(confirm):
     B1.pack()
     B2.pack()
     popup.mainloop()
+
+def verifypop(confirm,msg):
+    popup = tk.Tk()
+    def confirmy():
+        confirm[0]="Y"
+        popup.destroy()
+
+
+
+    def confirmn():
+        confirm[0]="N"
+        popup.destroy()
+
+
+    popup.wm_title("")
+    labelreq = ttk.Label(popup, text=msg, font=NORM_FONT)
+    labelreq.pack(side="top", fill="x", pady=10)
+
+    B1 = ttk.Button(popup, text = "Verify", command = confirmy)
+    B2 = ttk.Button(popup, text="Cancel", command=confirmn)
+    B1.pack()
+    B2.pack()
+    popup.mainloop()
+
+
