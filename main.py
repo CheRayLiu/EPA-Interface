@@ -187,7 +187,7 @@ class EPAgui(tk.Tk):
 
         aermodMenu = tk.Menu(reqMenu, tearoff=0)
         reqMenu.add_cascade(label='AERMOD Examples', underline=0,
-                            menu=aermapMenu)
+                            menu=aermodMenu)
         aermodMenu.add_command(label="AERMOD Example 1",
                             command=lambda: threading.Thread(target=mod1).start())
         aermodMenu.add_command(label="AERMOD Example 2",
