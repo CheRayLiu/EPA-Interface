@@ -66,7 +66,7 @@ def verifypop(confirm,msg):
         popup.destroy()
 
 
-    popup.wm_title("")
+    popup.wm_title("Function Verification")
     labelreq = ttk.Label(popup, text=msg, font=NORM_FONT)
     labelreq.pack(side="top", fill="x", pady=10)
 
