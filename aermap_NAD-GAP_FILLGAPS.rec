@@ -1,0 +1,51 @@
+** AERMAP - VERSION 18081                                              08/16/18
+**                                                                     11:21:37
+**  NAD Shift Gap Test - With FILLGAPS Option
+**  marchook.dem is NAD83; brdgport.dem is NAD27
+** A total of       2  DEM files were used
+** A total of      34  receptors were processed
+** DOMAINXY  466200  4404100  18  468100  4405500  18
+** ANCHORXY  467057  4405069  467057  4405069  18  4
+** TERRHGTS  EXTRACT
+**
+** NOTE:
+**   This run includes:      30  Receptor(s) located in GAPS BETWEEN files due to NAD shifts;
+**                                           but ALL have been assigned to the closest file.
+**   This run includes:      24  Receptor(s) located in gaps and assigned non-missing elevations
+**                                           based on the closest nodes under the FILLGAPS option!
+  
+RE ELEVUNIT     METERS
+   DISCCART     467890.00   4404959.00
+   DISCCART     467895.00   4404959.00
+   DISCCART     467900.00   4404959.00
+   DISCCART     467901.00   4404959.00
+   DISCCART     467902.00   4404959.00
+   DISCCART     467903.00   4404959.00
+   DISCCART     467904.00   4404959.00
+   DISCCART     467905.00   4404959.00
+   DISCCART     467906.00   4404959.00
+   DISCCART     467907.00   4404959.00
+   DISCCART     467908.00   4404959.00
+   DISCCART     467909.00   4404959.00
+   DISCCART     467910.00   4404959.00
+   DISCCART     467915.00   4404959.00
+   DISCCART     467920.00   4404959.00
+   DISCCART     467925.00   4404959.00
+   DISCCART     467930.00   4404959.00
+   DISCCART     467890.00   4404960.00
+   DISCCART     467895.00   4404960.00
+   DISCCART     467900.00   4404960.00
+   DISCCART     467901.00   4404960.00
+   DISCCART     467902.00   4404960.00
+   DISCCART     467903.00   4404960.00
+   DISCCART     467904.00   4404960.00 
+   DISCCART     467905.00   4404960.00
+   DISCCART     467906.00   4404960.00
+   DISCCART     467907.00   4404960.00
+   DISCCART     467908.00   4404960.00
+   DISCCART     467909.00   4404960.00
+   DISCCART     467910.00   4404960.00
+   DISCCART     467915.00   4404960.00
+   DISCCART     467920.00   4404960.00
+   DISCCART     467925.00   4404960.00
+   DISCCART     467930.00   4404960.00
