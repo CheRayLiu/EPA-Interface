@@ -84,6 +84,18 @@ def map2():
         process =subprocess.Popen('RunAERMAP', cwd=perdir +'AERMAP\\aermap_testcase\\NAD_Gap', shell= True,stdout=subprocess.PIPE)
         popupmsg("",process.communicate()[0].decode())
 
+        os.chdir(aermodlocray + aermodloc)
+        os.system('copy /y "aermod map2.inp" "aermod.inp"')
+        os.system("aermod")
+
+        copyplot = subprocess.call('copy TESTPM10_MULTYR_01H.PLT ' + aerplotray,
+                                   cwd=aermodlocray + plotfiles,
+                                   shell=True, stdout=subprocess.PIPE)
+
+        runplot = subprocess.call('aerplot_13329.exe',
+                                  cwd=aerplotray,
+                                  shell=True, stdout=subprocess.PIPE)
+
 
 
 def map3():

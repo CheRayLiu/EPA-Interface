@@ -172,31 +172,31 @@ class EPAgui(tk.Tk):
         reqMenu = tk.Menu(menubar, tearoff=0)
 
         aermapMenu = tk.Menu(reqMenu, tearoff =0)
-        reqMenu.add_cascade(label = 'AERMAP Examples',underline=0,
+        reqMenu.add_cascade(label = '地形資料處理 Examples',underline=0,
                                menu= aermapMenu)
 
 
 
-        aermapMenu.add_command(label="AERMAP Example 1", command=lambda: threading.Thread(target=mapMult).start())
-        aermapMenu.add_command(label="AERMAP Example 2",
+        aermapMenu.add_command(label="地形資料處理 Example 1", command=lambda: threading.Thread(target=mapMult).start())
+        aermapMenu.add_command(label="地形資料處理 Example 2",
                               command=lambda: threading.Thread(target=map2).start())
-        aermapMenu.add_command(label="AERMAP Output File",
+        aermapMenu.add_command(label="地形資料處理 Output File",
                             command=lambda: threading.Thread(target=map3).start())
-        reqMenu.add_command(label="AERMET",
+        reqMenu.add_command(label="氣象資料處理",
                               command=lambda: threading.Thread(target=met1).start())
 
         aermodMenu = tk.Menu(reqMenu, tearoff=0)
-        reqMenu.add_cascade(label='AERMOD Examples', underline=0,
+        reqMenu.add_cascade(label='大氣擴散污染評估 Examples', underline=0,
                             menu=aermodMenu)
-        aermodMenu.add_command(label="AERMOD Example 1",
+        aermodMenu.add_command(label="大氣擴散污染評估 Example 1",
                             command=lambda: threading.Thread(target=mod1).start())
-        aermodMenu.add_command(label="AERMOD Example 2",
+        aermodMenu.add_command(label="大氣擴散污染評估 Example 2",
                             command=lambda: threading.Thread(target=mod2).start())
-        aermodMenu.add_command(label="AERMOD Example 3",
+        aermodMenu.add_command(label="大氣擴散污染評估 Example 3",
                             command=lambda: threading.Thread(target=mod7).start())
-        aermodMenu.add_command(label="AERMOD Example 4",
+        aermodMenu.add_command(label="大氣擴散污染評估 Example 4",
                             command=lambda: threading.Thread(target=mod8).start())
-        reqMenu.add_command(label="AERSCREEN",
+        aermodMenu.add_command(label="AERSCREEN",
                             command=lambda: threading.Thread(target=screen1).start())
         tk.Tk.config(self, menu=menubar)
         menubar.add_cascade(label="Function Verify", menu=reqMenu)
