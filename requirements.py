@@ -128,18 +128,15 @@ def met1():
                  "能處理生成模擬預處理之氣象資料"
     verifypop(confirm, verifymsg)
     if confirm[0] == "Y":
-
-
-
-        process = subprocess.Popen('run_aermet_test_suite >> out_met.txt',
-                                   cwd=perdir + 'AERMET\\aermet_test_cases_18081\\aermet_def_testcases_18081',
-                                   shell=True,
-                                   stdout=subprocess.PIPE)
-
         process = subprocess.Popen('out_met.txt',
                                    cwd=perdir + 'AERMET\\aermet_test_cases_18081\\aermet_def_testcases_18081',
                                    shell=True,
                                    stdout=subprocess.PIPE)
+        process = subprocess.Popen('run_aermet_test_suite >> out_met.txt',
+                                cwd=perdir + 'AERMET\\aermet_test_cases_18081\\aermet_def_testcases_18081',
+                                  shell=True,
+                                  stdout=subprocess.PIPE)
+
 
 
         os.chdir(aermodlocray + aermodloc)
@@ -173,7 +170,7 @@ def mod1():
     verifypop(confirm, verifymsg)
     if confirm[0] == "Y":
         os.chdir(aermodlocray + aermodloc)
-        os.system('copy /y "aermod OG.inp" "aermod.inp"')
+        os.system('copy /y "aermod map1.inp" "aermod.inp"')
 
         inp1 = subprocess.Popen('aermod.inp',
                                 cwd=perdir + 'AERMOD\\aermod_test_cases_18081\\aermet_def_16216_aermod_16216r\\inputs',
